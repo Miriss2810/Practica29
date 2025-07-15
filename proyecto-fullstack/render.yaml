@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Practica29-4
+    env: python
+    region: oregon
+    # rootDirectory: backend  # <- comentar o borrar esta línea
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn backend.wsgi
+    autoDeploy: true
+    pythonVersion: 3.13.4
